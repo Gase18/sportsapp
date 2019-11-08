@@ -2,41 +2,60 @@ body{
 	list-style-type: none;
 	background-color: darkgrey;
 	padding: 0px;
-	margin:0px;
+	margin: 0px;
+}
+/* ...................Header..................... */
+.AppHeader li a {
+	float: left;
+	text-decoration: none;
+	color: red;
+	font-size: 20px;
+	padding: 3px;
+	border: solid red;
+	margin-top: -5px;
 }
 
-.header{
-	background-color: red;
+.AppHeader{
+	background-color: black;
 	text-align: center;
-	padding: 10px;
+	padding: 15px;
+}
+.AppHeader b{
+	color: red;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
+.uname{
+	padding-right: 10px;
 }
 
+.psw{
+	padding: 0 10px 0 40px;
+}
 
 #login{
-	background-color: black;
+	background-color: red;
 	height: 23px;
+	margin-left: 5px;
+	color: black;
 }
 
-button{
-	width: 100px;
-	height: 40px;
-	color: white;
-	background-color: blue;
-	margin-right: 5px;  
+
+
+
+
+/* .............Footer............... */
+.Footer {
+	position: absolute;
+	bottom: 0;
+	height: 2.5rem;
+	width: 100%;
+  	background-color: black;
+  	color: white;
+	text-align: center;
 }
 
-.inlogg{
-	text-align: right;
+.Footer a{
+	color:Red;
 }
-.container{
-	margin-left: 100px;
-}
+
+

@@ -1,12 +1,24 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
+import {FetchTest} from "./FetchTest";
+import {AppHeader} from "./AppHeader";
+import {AppFooter} from "./AppFooter";
 
+function App() {
+    const [newusers, setUser] = React.useState(undefined);
+    async function getTable(){
+        const users = await FetchTest();
+        setUser(users);
+        console.log(users);
+    }
+    return (
+        <div className="Content">
+        <header><AppHeader/></header>
+        <div><AppFooter/></div>
+        </div>
+    );
+}
 ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
