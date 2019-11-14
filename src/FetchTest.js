@@ -1,5 +1,5 @@
 import React from "react";
-import{FetchUsers} from "./UserSevices";
+import{FetchData} from "./AppData";
 import{UserList} from "./UserList";
 
 
@@ -14,7 +14,7 @@ export function FetchTest(props){
 
     const [users, setUsers]=React.useState(undefined);
    async function getData(){
-       const data = await FetchUsers();
+       const data = await FetchData();
        setUsers(data);
     }
     console.log(users);

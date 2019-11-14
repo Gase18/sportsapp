@@ -1,5 +1,5 @@
-export async function FetchUsers(){
-  let result = await fetch("https://jsonplaceholder.typicode.com/users");
+export async function FetchData(){
+  let result = await fetch("/LecStandings/resources/matches");
 
   //extra data
   if(result.ok)
