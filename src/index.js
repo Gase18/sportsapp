@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-// import * as serviceWorker from './serviceWorker';
 import {AppHeader} from "./AppHeader";
 import {AppFooter} from "./AppFooter";
 import {AppList} from "./AppList";
 import{FetchData} from "./AppData";
+import GUIState from "./GUIState";
+
 
 function App() {
     const [newusers, setUser] = React.useState(undefined);
@@ -19,6 +20,7 @@ function App() {
     return (
         <div className="Content">
         <header><AppHeader/></header>
+        <div><GUIState/></div>
         <div><AppList tData= {newusers}/></div>
         <div><AppFooter/></div>
         </div>

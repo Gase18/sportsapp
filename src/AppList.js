@@ -1,6 +1,5 @@
 import React from "react";
 export function AppList(props){
-    console.log("something", props.tData)
     let content =<div></div>
 
     if(props.tData) {

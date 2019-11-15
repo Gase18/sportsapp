@@ -41,12 +41,15 @@ body{
 
 /* .................Tabell...................*/
 table, th, td{
+	height: 5em;
+	width: 70em;
 	position: relative;
 	border-collapse: collapse; 
 	border: 2px solid black;
-	margin-left: 40%;
+	margin-left: 20%;
 	padding: 0 10px 0 10px;
-	margin-top: 10px;
+	margin-top: 5em;
+	text-align: center;
 }
 
 
