@@ -1,6 +1,6 @@
 import React from "react";
 
-function NavBar(props){
+export function NavBar(props){
     function onLinkClicked(id){
         // console.log(`Link ${id} was clicked`);
         props.onNavigate(id);
@@ -8,7 +8,7 @@ function NavBar(props){
 
     return (
         <nav>
-            <span onClick={() => onLinkClicked(1)}>sida 1</span>
+            <span onClick={() => onLinkClicked(1)}><a href="http://localhost:3000">Sida 1</a></span>
             <span onClick={() => onLinkClicked(2)}>sida 2</span>
             <span onClick={() => onLinkClicked(3)}>sida 3</span>
         </nav>
