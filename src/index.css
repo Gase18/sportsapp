@@ -1,3 +1,6 @@
+
+
+
 body{
 	list-style-type: none;
 	background-color: darkgrey;
@@ -43,14 +46,10 @@ body{
 table, th, td{
 	height: 5em;
 	width: 70em;
-	position: relative;
-	border-collapse: collapse; 
 	border: 2px solid black;
 	margin-left: 20%;
 	margin-bottom: 50px;
-	padding: 0 10px 0 10px;
 	margin-top: 5em;
-	text-align: center;
 }
 
 
@@ -69,4 +68,15 @@ table, th, td{
 	color:Red;
 }
 
+
+/* ............Mobile First................... */
+/* @media
+only screen and (max-width: 760px),
+(min-device-width:1450px) and (max-device-width: 1524px)  {
+	table, thead, tbody, th, td, tr { 
+		width: 50px;
+		margin-left: 10px;
+	}
+}
+	 */
 
