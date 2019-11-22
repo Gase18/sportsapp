@@ -8,28 +8,17 @@ import {AppList} from "./AppList";
 import {AppStandings} from "./AppStandings";
 import{FetchData} from "./AppData";
 import{AppNewStats} from "./AppNewStats";
-
+import{AppDeleteStats} from "./AppDeleteStats";
+import{AppEditStats} from "./AppEditStats";
+import{FetchProtectedData} from "./AppData";
 
 
 function App() {
     const [newusers, setUser] = React.useState(undefined);
     const authString = React.useRef(undefined);
-    const [logedin]=React.useState(false);
+    const [logedin, setlogedin]=React.useState(false);
 
-    async function FetchProtectedData(authString,url,method){
-        const res = await fetch(url, {
-            method: method,
-            headers: {
-                'Authorization': authString
-            }
-        });
-
-        if(res.status === 401){
-            throw "Fel användarnamn/lösenord!"
-        }
-        const data = await res.json();
-        return data;
-    }
+   
     
     async function getTable(){
         const data = await FetchData();
@@ -40,24 +29,24 @@ function App() {
 
 
     async function onLogin(auth){
-        let logedIn = false;
         authString.current = auth;
-
+        let getData =false;
         try{
-            await FetchProtectedData(auth,"/LecStandings/resources/matches", "POST")
+            await FetchProtectedData(auth,"/LecStandings/resources/match", "POST")
 
         } catch(Fel){
 
             if(Fel === "Fel användarnamn/lösenord!"){
-                logedIn = false;
+                setlogedin(false);
 
             }else{
-                logedIn = true;
+                setlogedin(true);
+                getData = true;
             }
 
         }
 
-        if(logedIn === true){
+        if(getData === true){
             getTable();
         }
     }
@@ -65,7 +54,11 @@ function App() {
         <div className="Content">
         <header><AppHeader onLogin={onLogin}/></header>
         <div><AppList tData= {newusers}/></div>
-        <div><AppNewStats alertbutton ={logedin}/></div>
+        <div>
+            <AppNewStats alertbutton ={logedin}/>
+            <AppEditStats alertbutton ={logedin}/>
+            <AppDeleteStats alertbutton ={logedin}/>
+        </div>
         <div><AppStandings sData= {newusers}/></div>
         <div><AppFooter/></div>
         </div>

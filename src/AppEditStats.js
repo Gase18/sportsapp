@@ -1,12 +1,12 @@
 import React from "react";
-import {PostData} from "./AppData";
+import {PostData, EditData} from "./AppData";
 
-export function AppNewStats(props){
+export function AppEditStats(props){
     const [ShowModal, setShowModal] = React.useState(false); 
-
+    const [logedin]=React.useState(false);
 
     function OnAdd(){
-        if(props.alertbutton === true){
+        if(props.alertbutton === false){
             setShowModal(true);
         } 
     }
@@ -15,25 +15,24 @@ export function AppNewStats(props){
         setShowModal(false);
     }
 
-    function addNewTeam(){
-        console.log("hejsan");
-        if(props.alertbutton === true){
-            const blue_team = document.getElementById("Blue_Team").value;
-            const red_team = document.getElementById("Red_Team").value;
-            const blue_points = Number(document.getElementById("Blue_points").value);
-            const red_points = Number(document.getElementById("Red_points").value);
+    function editTeam(){
+        if(logedin === 1){
+            const Blue_Team = document.getElementById("Blue_Team").Value;
+            const Red_Team = document.getElementById("Red_Team").Value;
+            const Blue_points = document.getElementById("Blue_Points").Value;
+            const Red_points = document.getElementById("Red_points").Value;
             // PostData(Blue_Team, Red_Team,Number(Blue_points), Number(Red_points));
             const data ={
                 id: 0,
-                blue_team,
-                red_team,
-                blue_points,
-                red_points
+                Blue_Team,
+                Red_Team,
+                Blue_points,
+                Red_points
             }
 
             PostData(data);
+
             closeModal();
-            console.log("hej");
         }
     }
     
@@ -43,7 +42,7 @@ export function AppNewStats(props){
     }
 
     return <div className="Container">
-                <button id="addBtn" type="button" onClick={OnAdd}>Add new match!</button>
+                <button id="editBtn" type="button" onClick={OnAdd}>Edit Match</button>
 
                 <div className={modalClass}>
 
@@ -54,7 +53,7 @@ export function AppNewStats(props){
                         <input className="input" id="Red_Team" type="text" placeholder="Red_Team"/>
                         <input className="input" id="Blue_points" type="text" placeholder="Blue_Points"/>
                         <input className="input" id="Red_points" type="text" placeholder="Red_Points"/>
-                        <button id="Uppdate" onClick={addNewTeam}>Add</button>
+                        <button type="reset" id="Uppdate" onClick={EditData}>Edit</button>
                     </div>
 
                     <button className="modal-close is-large" onClick={closeModal} aria-label="close">modal</button>

@@ -2,6 +2,8 @@ import React from "react";
 export function AppList(props){
     let content =<div></div>
 
+ 
+
     if(props.tData) {
         const tableElements = props.tData.map(newData => <tr>
             <td>{newData.id}</td>

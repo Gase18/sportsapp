@@ -48,11 +48,38 @@ table, th, td{
 	width: 70em;
 	border: 2px solid black;
 	margin-left: 20%;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	margin-top: 5em;
 }
 
+/* ...............AddButton/DeleteButton.............. */
 
+#addBtn{
+	margin-left: 75%;
+	height: 50px;
+	width: 80px;
+	background-color: red;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#DeleteBtn{
+	margin-top: 10px;
+	margin-left: 75%;
+	height: 50px;
+	width: 80px;
+	background-color: red;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#editBtn{
+	margin-top: 10px;
+	margin-left: 75%;
+	height: 50px;
+	width: 80px;
+	background-color: red;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* .............Footer............... */
 .Footer {
@@ -69,14 +96,4 @@ table, th, td{
 }
 
 
-/* ............Mobile First................... */
-/* @media
-only screen and (max-width: 760px),
-(min-device-width:1450px) and (max-device-width: 1524px)  {
-	table, thead, tbody, th, td, tr { 
-		width: 50px;
-		margin-left: 10px;
-	}
-}
-	 */
 
